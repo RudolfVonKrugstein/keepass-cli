@@ -5,6 +5,9 @@ install_requires = ['libkeepass']
 setup(
   name = 'keepass_cli',
   packages = ['keepass_cli'], # this must be the same as the name above
+  entry_points = {
+        "console_scripts": ['keepass-cli = keepass_cli.keepass_cli:main']
+        },
   version = '0.1',
   description = 'A cli interface to keepass/libkeepass',
   author = 'Nathan Huesken',
