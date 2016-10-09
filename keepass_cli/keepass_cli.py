@@ -63,7 +63,7 @@ def entryTreeToObject(obj_root, entryPath, fieldNames):
             result[entry][fieldName] = getEntry(obj_root, entryPath + "/" + entry, fieldName)
     return result
 
-if __name__ == "__main__":
+def main():
     env_password = environ.get('KEEPASS_PASSWORD')
 
     usage = "Usage: %prog command options\n\ncommand my be one of show-entry, list-entries and to-json"

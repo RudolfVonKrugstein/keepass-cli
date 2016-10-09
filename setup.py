@@ -7,7 +7,7 @@ setup(
   packages = ['keepass_cli'], # this must be the same as the name above
   version = '0.1',
   description = 'A cli interface to keepass/libkeepass',
-  author = 'Nathan Hüsken',
+  author = 'Nathan Huesken',
   author_email = 'nathan.huesken@posteo.de',
   install_requires=install_requires,
   url = 'https://github.com/RudolfVonKrugstein/keepass-cli',
