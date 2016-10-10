@@ -85,7 +85,7 @@ def main():
     (options, args) = parser.parse_args()
 
     if len(args) != 1:
-        parser.error("You must give exactly one command (show-entry or or list-entries)");
+        parser.error("You must give exactly one command (show-entry, list-entries or to-json)");
     
     if args[0] == "show-entry":
         with libkeepass.open(options.filename, password=options.password) as kdb:
