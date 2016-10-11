@@ -8,13 +8,13 @@ setup(
   entry_points = {
         "console_scripts": ['keepass-cli = keepass_cli.keepass_cli:main']
         },
-  version = '0.1.1',
+  version = '0.1.2',
   description = 'A cli interface to keepass/libkeepass',
   author = 'Nathan Huesken',
   author_email = 'nathan.huesken@posteo.de',
   install_requires=install_requires,
   url = 'https://github.com/RudolfVonKrugstein/keepass-cli',
-  download_url = 'https://github.com/RudolfVonKrugstein/keepass-cli/tarball/0.1.1',
+  download_url = 'https://github.com/RudolfVonKrugstein/keepass-cli/tarball/0.1.2',
   classifiers = [
       'Intended Audience :: Developers',
       'Intended Audience :: System Administrators',
