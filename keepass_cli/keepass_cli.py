@@ -4,6 +4,7 @@
 import libkeepass
 from os import environ
 from optparse import OptionParser
+import json
 
 
 def getEntry(obj_root,entryPath, fieldName):
@@ -120,7 +121,7 @@ def main():
         if options.entryPath == None:
             parser.error("You must give the entryPath parameter with to-json");
         with libkeepass.open(options.filename, password=options.password) as kdb:
-            print(entryTreeToObject(kdb.obj_root, options.entryPath, options.fieldNames.split(",")))
+            json.dumps(entryTreeToObject(kdb.obj_root, options.entryPath, options.fieldNames.split(",")))
 
     if args[0] == "to-keyvalue":
         if options.entryPath == None:
