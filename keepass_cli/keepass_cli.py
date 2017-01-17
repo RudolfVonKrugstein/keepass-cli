@@ -60,6 +60,7 @@ def entryTreeToObject(obj_root, entryPath, fieldNames):
     for group in listGroupsInGroup(obj_root,entryPath):
         result[group] = entryTreeToObject(obj_root, entryPath + "/" + group, fieldNames)
     for entry in listEntriesInGroup(obj_root, entryPath):
+        entry = str(entry)
         result[entry] = {}
         fn = fieldNames
         if fn == "*":
@@ -67,7 +68,7 @@ def entryTreeToObject(obj_root, entryPath, fieldNames):
         for fieldName in fn:
             value = getEntry(obj_root, entryPath + "/" + entry, fieldName)
             if value != None:
-                result[entry][fieldName] = value
+                result[entry][fieldName] = str(value)
     return result
 
 def entryTreeToKeyValue(obj_root, entryPath, fieldName):
@@ -121,7 +122,7 @@ def main():
         if options.entryPath == None:
             parser.error("You must give the entryPath parameter with to-json");
         with libkeepass.open(options.filename, password=options.password) as kdb:
-            json.dumps(entryTreeToObject(kdb.obj_root, options.entryPath, options.fieldNames.split(",")))
+            print(json.dumps(entryTreeToObject(kdb.obj_root, options.entryPath, options.fieldNames.split(","))))
 
     if args[0] == "to-keyvalue":
         if options.entryPath == None:

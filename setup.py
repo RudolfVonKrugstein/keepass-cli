@@ -8,7 +8,7 @@ setup(
   entry_points = {
         "console_scripts": ['keepass-cli = keepass_cli.keepass_cli:main']
         },
-  version = '0.1.4',
+  version = '0.1.5',
   description = 'A cli interface to keepass/libkeepass',
   author = 'Nathan Huesken',
   author_email = 'nathan.huesken@posteo.de',
