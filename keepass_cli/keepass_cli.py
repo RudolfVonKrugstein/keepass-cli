@@ -64,7 +64,9 @@ def entryTreeToObject(obj_root, entryPath, fieldNames):
         if fn == "*":
             fn = listEntriesInGroup(obj_root, entryPath)
         for fieldName in fn:
-            result[entry][fieldName] = getEntry(obj_root, entryPath + "/" + entry, fieldName)
+            value = getEntry(obj_root, entryPath + "/" + entry, fieldName)
+            if value != None:
+                result[entry][fieldName] = value
     return result
 
 def entryTreeToKeyValue(obj_root, entryPath, fieldName):
@@ -79,7 +81,9 @@ def entryTreeToKeyValue(obj_root, entryPath, fieldName):
         for entry in tmp:
             result.append(group + "." + entry)
     for entry in listEntriesInGroup(obj_root, entryPath):
-        result.append(entry + "=" + str(getEntry(obj_root, entryPath + "/" + entry, fieldName)))
+        value = getEntry(obj_root, entryPath + "/" + entry, fieldName) 
+        if value != None:
+            result.append(entry + "=" + str(value))
     return result
 
 def main():
